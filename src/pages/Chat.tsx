@@ -42,7 +42,8 @@ const Chat = () => {
     setTimeout(() => {
       const botMessage: Message = {
         id: (Date.now() + 1).toString(),
-        content: "This is a simulated response from Luminara AI. In a real implementation, this would be connected to your AI backend.",
+        content:
+          "This is a simulated response from Luminara AI. In a real implementation, this would be connected to your AI backend.",
         isBot: true,
         timestamp: new Date(),
       };
@@ -60,7 +61,9 @@ const Chat = () => {
       {/* Sidebar */}
       <div className="w-64 border-r bg-gray-50 p-4 hidden md:block">
         <Link to="/" className="block mb-6">
-          <h1 className="text-xl font-semibold luminara-gradient">Luminara AI</h1>
+          <h1 className="text-xl font-semibold luminara-gradient">
+            Luminara AI
+          </h1>
         </Link>
         <div className="space-y-4">
           <div className="text-sm font-medium text-gray-500">Recent Chats</div>
@@ -75,20 +78,23 @@ const Chat = () => {
 
       {/* Main Chat Area */}
       <div className="flex-1 flex flex-col">
-        <div 
+        <div
           ref={chatContainerRef}
           className="flex-1 overflow-y-auto p-4 space-y-4"
         >
           {messages.map((message) => (
             <div
               key={message.id}
-              className={`flex ${message.isBot ? "justify-start" : "justify-end"}`}
+              className={`flex ${
+                message.isBot ? "justify-start" : "justify-end"
+              }`}
             >
               <div
                 className={`max-w-[80%] md:max-w-[60%] p-4 rounded-lg message-transition
-                  ${message.isBot 
-                    ? "bg-gray-100 rounded-tl-none" 
-                    : "bg-gradient-to-r from-[#0051ff] to-[#ff0063] text-white rounded-tr-none"
+                  ${
+                    message.isBot
+                      ? "bg-gray-100 rounded-tl-none"
+                      : "bg-gradient-to-r from-[#0051ff] to-[#ff0063] text-white rounded-tr-none"
                   }`}
               >
                 <div className="flex justify-between items-start gap-2">
@@ -102,7 +108,11 @@ const Chat = () => {
                     </button>
                   )}
                 </div>
-                <div className={`text-xs mt-2 ${message.isBot ? "text-gray-500" : "text-white/80"}`}>
+                <div
+                  className={`text-xs mt-2 ${
+                    message.isBot ? "text-gray-500" : "text-white/80"
+                  }`}
+                >
                   {message.timestamp.toLocaleTimeString()}
                 </div>
               </div>
