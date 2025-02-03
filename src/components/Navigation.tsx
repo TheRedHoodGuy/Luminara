@@ -19,7 +19,7 @@ const Navigation = () => {
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
               <button
-                onClick={() => navigate("/chat")}
+                onClick={() => navigate("/luminara")}
                 className="ml-4 px-4 py-2 rounded-md bg-primary text-primary-foreground text-sm font-medium hover:opacity-90 transition-opacity"
               >
                 Get Started
